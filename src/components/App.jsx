@@ -1,25 +1,17 @@
-import { Component } from "react";
+import { useState } from "react";
 import Searchbar from "./Searchbar/Searchbar";
 import ImageGallery from "./ImageGallery/ImageGallery";
 
 
-export default class App extends Component  {
+ export default function App ()  {
+const[request, setRequest]=useState('');
 
-  state = {
-    request: ''
-     
-}
-
-  handleFormSubmit = request => { 
+ const handleFormSubmit = request => { 
     console.log(request);
-    this.setState({ request });
+   setRequest(request );
   }
 
 
-
-
-  render() {
-    console.log(this.state.request);
      return (
     <div
       style={{
@@ -31,11 +23,11 @@ export default class App extends Component  {
         color: '#010101'
       }}
     >
-         <Searchbar onSubmit={this.handleFormSubmit} />
+         <Searchbar onSubmit={handleFormSubmit} />
          
-         <ImageGallery Request={ this.state.request} />
+         <ImageGallery Request={ request} />
     </div>
   );
-  }
+  
  
 };
