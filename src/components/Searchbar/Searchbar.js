@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { Component } from "react";
 import { Button, Form, SearchbarStyle } from "./Searchbar.styled";
 
- const Searchbar =()=> {
+ const Searchbar =({onSubmit})=> {
   const [request, setRequest]=useState('');  
-  // state = {
-  //       request:''
-  //    }
-     
+       
    const handleChange = e => {
          setRequest (e.currentTarget.value.toLowerCase());
          
@@ -19,9 +15,8 @@ import { Button, Form, SearchbarStyle } from "./Searchbar.styled";
             alert("PLease, enter a request");
             return
         }
-      const { onSubmit } = this.props;
-        
-        onSubmit(this.state);
+            
+        onSubmit({request});
         reset();
     };
 
@@ -29,9 +24,7 @@ import { Button, Form, SearchbarStyle } from "./Searchbar.styled";
         setRequest('');
     };
     
-         
-         
-
+    
      return(
         <SearchbarStyle class="searchbar">
   <Form class="form" onSubmit={handleSubmit}>
