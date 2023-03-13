@@ -1,25 +1,27 @@
-import { Component } from "react";
+import { useState } from "react";
 import Modal from "components/Modal/Modal";
 import { ImageItem, ImgStyle, ListItem } from "./ImageGalleryItem.styled";
 
-export default class ImageGalleryItem extends Component
-{state = {
-        isOpen: false,
-    }
+export default function ImageGalleryItem ()
+{
+   const [isOpen, setIsOpen]=useState(false);
+    // state = {
+    //     isOpen: false,
+    // }
        
-     toggleModal = (e) => {
-        this.setState({ isOpen: !this.state.isOpen });
+     const toggleModal = (e) => {
+        setIsOpen(!this.state.isOpen );
     }
     
-    render() {
-        const{ webformatURL, largeImageURL, tags } = this.props;
+    // render() {
+        const{ webformatURL, largeImageURL, tags } = props;
 
        return (<>       
         <ImageItem>        
             
-                    < ListItem onClick={()=>this.toggleModal()}>                
+                    < ListItem onClick={()=>toggleModal()}>                
                         <ImgStyle className="GalleryImage" src={webformatURL} alt={tags} />   
-                        {this.state.isOpen&&<Modal largeImageURL={largeImageURL} />}
+                        {isOpen&&<Modal largeImageURL={largeImageURL} />}
                     </ListItem> 
                     
                                  
@@ -27,6 +29,10 @@ export default class ImageGalleryItem extends Component
     </>
         ) 
    }   
-}
 
 
+
+//    < ListItem onClick={()=>toggleModal()}>                
+//    <ImgStyle className="GalleryImage" src={webformatURL} alt={tags} />   
+//    {this.state.isOpen&&<Modal largeImageURL={largeImageURL} />}
+// </ListItem> 
