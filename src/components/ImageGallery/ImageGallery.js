@@ -8,7 +8,7 @@ export default function ImageGallery ({Request}){
     const [gallery, setGallery] = useState([]);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
+    // const [errorMessage, setErrorMessage] = useState('');
     
     console.log(Request);
            
@@ -22,9 +22,10 @@ export default function ImageGallery ({Request}){
                 .then(res => res.json())
                 .then(({ hits }) => {
                     setGallery(gallery=>[...gallery, ...hits]);
-                    setErrorMessage('');
+                    // setErrorMessage('');
                 })
-                .catch((error) => setErrorMessage(error.message))
+                // .catch((error) => setErrorMessage(error.message))
+                .catch((error) => console.log(error.message))
                 .finally(setLoading(false));
         }, [Request, page]);
       
