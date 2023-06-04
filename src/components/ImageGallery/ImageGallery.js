@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ImageGalleryItem from "components/ImageGalleryItem/ImageGalleryItem";
 import { Vortex } from "react-loader-spinner";
 import { Gallerylist, LoadMoreButton } from "./ImageGallery.styled";
+import PropTypes from "prop-types";
 
 export default function ImageGallery ({Request}){
 
@@ -54,3 +55,7 @@ export default function ImageGallery ({Request}){
             </>
         )
     }
+
+ImageGallery.propTypes = {
+    Request: PropTypes.string.isRequired,
+};

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "components/Modal/Modal";
 import { ImageItem, ImgStyle, ListItem } from "./ImageGalleryItem.styled";
+import PropTypes from "prop-types";
 
 export default function ImageGalleryItem ({webformatURL, tags, largeImageURL})
 {
@@ -25,4 +26,8 @@ export default function ImageGalleryItem ({webformatURL, tags, largeImageURL})
         ) 
    }   
 
-
+ImageGalleryItem.propTypes = {
+    webformatURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+};

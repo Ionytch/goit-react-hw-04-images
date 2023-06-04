@@ -1,4 +1,6 @@
 import { Overlay, ModalStyle } from './Modal.styled';
+import PropTypes from "prop-types";
+
 
 
 export default function Modal ({largeImageURL}) {
@@ -10,3 +12,7 @@ export default function Modal ({largeImageURL}) {
 </Overlay>
   )
 }
+
+Modal.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+};
