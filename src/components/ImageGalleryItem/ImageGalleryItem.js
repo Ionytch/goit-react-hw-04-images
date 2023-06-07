@@ -17,7 +17,7 @@ export default function ImageGalleryItem ({webformatURL, tags, largeImageURL})
             
                     < ListItem onClick={()=>toggleModal()}>                
                         <ImgStyle className="GalleryImage" src={webformatURL} alt={tags} />   
-                        {isOpen&&<Modal largeImageURL={largeImageURL} />}
+                        {isOpen&&<Modal largeImageURL={largeImageURL} toggleModal={toggleModal}/>}
                     </ListItem> 
                     
                                  
