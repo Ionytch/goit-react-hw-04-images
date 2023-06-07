@@ -53,6 +53,6 @@ import PropTypes from "prop-types";
 export default Searchbar;
 
 Searchbar.propTypes = {
-  onSubmit: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
