@@ -32,4 +32,5 @@ useEffect(() => {
 
 Modal.propTypes = {
   largeImageURL: PropTypes.string.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
