@@ -3,6 +3,7 @@ import Modal from "components/Modal/Modal";
 import { ImageItem, ImgStyle, ListItem } from "./ImageGalleryItem.styled";
 import PropTypes from "prop-types";
 
+
 export default function ImageGalleryItem ({webformatURL, tags, largeImageURL})
 {
    const [isOpen, setIsOpen]=useState(false);

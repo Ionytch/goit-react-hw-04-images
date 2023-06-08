@@ -2,8 +2,12 @@ import { useEffect } from 'react';
 import { Overlay, ModalStyle } from './Modal.styled';
 import PropTypes from "prop-types";
 
-export default function Modal({ largeImageURL, toggleModal}) {
+export default function Modal({ largeImageURL, toggleModal }) {
   
+  const hadleClick = e => {
+    e.stopPropagation();
+  };
+
 useEffect(() => {
         console.log('mounted');
             
@@ -13,21 +17,25 @@ useEffect(() => {
                 toggleModal()
             };
         };
-        
+         
 
         document.addEventListener('keydown', closeModalByEsc)
 
         return () => document.removeEventListener('keydown', closeModalByEsc)
 
-    }, [toggleModal])
+}, [toggleModal])
+  
+  
 
   return (
-<Overlay class="overlay">
-  <ModalStyle class="modal">
+<Overlay class="overlay" id='overlay' onClick={()=>toggleModal()}>
+  <ModalStyle class="modal" onClick={hadleClick}>
     <img src={largeImageURL} alt='' />
   </ModalStyle>
-</Overlay>
+    </Overlay>
+  
   )
+  
 }
 
 Modal.propTypes = {

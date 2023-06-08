@@ -10,11 +10,12 @@ export const Overlay =styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: 0;
 `
 
 export const ModalStyle = styled.div`
 	position: relative;
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
+   z-index: 1000;
 ` 

@@ -21,5 +21,12 @@ export default function ImageGallery ({gallery}){
     }
 
 ImageGallery.propTypes = {
-    gallery: PropTypes.array.isRequired,
+    gallery: PropTypes.arrayOf(
+        PropTypes.shape(
+        {id: PropTypes.string.isRequired,
+        webformatURL:PropTypes.string.isRequired,
+        tags:PropTypes.string.isRequired,
+        largeImageURL:PropTypes.string.isRequired,}
+        ).isRequired,
+    ).isRequired,
 };
